@@ -35,17 +35,17 @@ export const vistaLogin = {
     script:()=>{
         document.querySelector('#iniciarSesion').addEventListener('click',(event)=>{
             event.preventDefault
-            const baseDatos= localStorage.getItem('BD')
-            const objetoJson = JSON.parse(baseDatos)
-            console.log(objetoJson)
-            const correoElectronico = document.querySelector('#email').value
-            const contrasenya = document.querySelector('#pass').value
+            const bd= localStorage.getItem('BD')
+            const objetoJson = JSON.parse(bd)
+            // console.log(objetoJson)
+            const email = document.querySelector('#email').value
+            const passw = document.querySelector('#pass').value
 
             objetoJson.forEach(element => {
-                if(correoElectronico == element.email){
-                    if(contrasenya == element.contrasenya){
+                if(email == element.email){
+                    if(passw == element.contrasenya){
                         alert('Has iniciado sesion correctamente')
-                        document.querySelector('#nombreUsuario').innerHTML=correoElectronico
+                        document.querySelector('#nombreUsuario').innerHTML=email
                         document.querySelector('#nombreUsuario').classList.replace('d-none', 'd-inline-block'); 
                         document.querySelector('#cerrarSesion').classList.replace('d-none', 'd-inline-block'); 
                         document.querySelector('main').innerHTML=vistaPanel.template
@@ -65,6 +65,9 @@ export const vistaLogin = {
             document.querySelector('main').innerHTML=vistaLogin.template
             vistaLogin.script()
         })
+
+
+        
 
         document.querySelector('#registrox').addEventListener('click',(event)=>{
             event.preventDefault

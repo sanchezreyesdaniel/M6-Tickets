@@ -1,3 +1,4 @@
+import { vistaComentario } from "../vistas/vistaComentario"
 import { vistaLogin } from "../vistas/vistaLogin"
 import { vistaPanel } from "../vistas/vistaPanel"
 import { vistaRegistre } from "../vistas/vistaRegistre"
@@ -12,6 +13,7 @@ export const header = {
             <button id="panel" class="btn btn-secondary ms-2">PANEL</button>
             <button id="login" class="btn btn-secondary ms-2">LOGIN</button>
             <button id="registro" class="btn btn-secondary ms-2">REGISTRO</button>
+            
         </div>
         <div>
             <span id="nombreUsuario" class="d-none"></span>
@@ -35,5 +37,6 @@ export const header = {
             document.querySelector('main').innerHTML=vistaRegistre.template
             vistaRegistre.script()
         })
+        
     }
 }
